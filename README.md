@@ -1,5 +1,5 @@
 # PageViews
-## (Module/Plugin/Snippet)
+### (Module/Plugin/Snippet)
 
 [!Pageviews!]
 
