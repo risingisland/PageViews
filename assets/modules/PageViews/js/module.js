@@ -1,7 +1,7 @@
 var columns = [ [
     {
         field:'pagetitle',
-        title:'Название документа',
+        title:'Document\'s name',
         sortable:true,
         width:200,
         formatter: function(value,row) {
@@ -27,7 +27,7 @@ var columns = [ [
         align:'center',
         fixed:true,
         formatter:function(value,row){
-                return '<a class="action delete" href="javascript:void(0)" onclick="GridHelper.reset('+row.rid+')" title="Обнулить"><i class="fa fa-eraser fa-lg"></i></a>';
+                return '<a class="action delete" href="javascript:void(0)" onclick="GridHelper.reset('+row.rid+')" title="Reset"><i class="fa fa-eraser fa-lg"></i></a>';
         }
     }
 ] ];
@@ -43,15 +43,15 @@ var GridHelper = {
                     if(data.success) {
                         $('#pageviews').datagrid('reload');
                     } else {
-                        $.messager.alert('Ошибка','Не удалось выполнить');
+                        $.messager.alert('Error','Failed to execute');
                     }
                 },'json'
             ).fail(GridHelper.handleAjaxError);
         }
     },
     handleAjaxError: function(xhr){
-        var message = xhr.status == 200 ? 'Не удалось обработать ответ сервера' : 'Ошибка сервера ' + xhr.status + ' ' + xhr.statusText;
-        $.messager.alert('Ошибка', message, 'error');
+        var message = xhr.status == 200 ? 'Failed to process server response' : 'Server Error ' + xhr.status + ' ' + xhr.statusText;
+        $.messager.alert('Error', message, 'error');
     },
     initGrid: function () {
         $('#pageviews').datagrid({
