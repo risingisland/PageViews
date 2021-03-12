@@ -1,7 +1,7 @@
 var columns = [ [
     {
         field:'pagetitle',
-        title:'Document\'s name',
+        title:'Document\'s Name',
         sortable:true,
         width:200,
         formatter: function(value,row) {
